@@ -14,7 +14,12 @@ class MyComonent extends React.Component {
 
       onClickTest = (event) => {
         // console.log("Pro vip");
-        console.log(event);
+        // console.log(event);
+        console.log("name: " + this.state.name);
+        
+        this.setState({ 
+          name: "Bao Pro Vip" 
+        });
       };
 
       onClickTest_2 = (event) => {
@@ -29,7 +34,7 @@ class MyComonent extends React.Component {
                 <div>
                   {"this age: "+ this.state.age} and address của tao: {this.state.address};  
                 </div>
-                <button onClick={this.onClickTest}>click vào đây</button> {/* this.onClickTest - Cần phải dùng this. vì 
+                <button onClick={(event) => {this.onClickTest(event)}}>click vào đây</button> {/* this.onClickTest - Cần phải dùng this. vì 
                 để cho nó biết là mình đang cần xử lý {hàm} thuộc một biến {object}.
                 onClickTest do class MyComonent quản lý*/}
 
