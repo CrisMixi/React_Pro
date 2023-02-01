@@ -13,32 +13,40 @@ class MyComonent extends React.Component {
     
 
       onClickTest = (event) => {
-        // console.log("Pro vip");
-        // console.log(event);
         console.log("name: " + this.state.name);
         
         this.setState({ 
-          name: "Bao Pro Vip" 
+          name: "Bao Pro Vip" ,
+          age: Math.floor((Math.random()* 1000) + 1)
         });
       };
 
       onClickTest_2 = (event) => {
         console.log(event);
       }
+
+      handleOnChangeInput = (event) => {
+        console.log(event.target.value);
+      }
+
+      handleOnSubmit = (event) => {
+        event.prevenDefault();
+        console.log(this.state)
+      }
     // JSX
     render() {
         return (
-            <div>
-                component của tao
-                
+            <div>                
                 <div>
-                  {"this age: "+ this.state.age} and address của tao: {this.state.address};  
+                  {"this age: "+ this.state.age} and address của tao:{this.state.address};  
                 </div>
-                <button onClick={(event) => {this.onClickTest(event)}}>click vào đây</button> {/* this.onClickTest - Cần phải dùng this. vì 
-                để cho nó biết là mình đang cần xử lý {hàm} thuộc một biến {object}.
-                onClickTest do class MyComonent quản lý*/}
+                
+                <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                  <input type="text"  onChange={(event) => this.handleOnChangeInput(event) }/>
+                  <button>Click đê</button>
+                  
+                </form>
 
-                <button onMouseOver={this.onClickTest_2}>click mouse</button>
             </div>
         );
     }
