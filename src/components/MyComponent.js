@@ -42,7 +42,7 @@ class MyComonent extends React.Component {
                 </div>
                 
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
-                  <input type="text"  onChange={(event) => this.handleOnChangeInput(event) }/>
+                  <input type="text"  onChange={(event) => this.handleOnChangeInput(event) }/> {/* onChange event */}
                   <button>Click đê</button>
                   
                 </form>
